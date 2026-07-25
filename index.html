@@ -8,7 +8,35 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,600;1,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #FBFAF7; color: #1C1B19; -webkit-font-smoothing: antialiased; }
+a { color: #8E0018; text-decoration: none; }
+a:hover { color: #C00025; text-decoration: underline; }
+::selection { background: #C00025; color: #F2EDE4; }
+input:focus, select:focus, textarea:focus { outline: 2px solid #C00025; outline-offset: 1px; }
+.rl-nav-toggle { display: none; }
+@media (max-width: 1120px) {
+  .rl-nav-desktop { display: none !important; }
+  .rl-nav-toggle { display: flex !important; }
+  .trust-bar { justify-content: flex-start !important; font-size: 12px !important; column-gap: 18px !important; }
+  .trust-bar .sep { display: none !important; }
+}
+@media (min-width: 1121px) {
+  .rl-nav-mobile { display: none !important; }
+  #rl-mobile-menu { display: none !important; }
+}
+@media (max-width: 900px) {
+  .two-col { grid-template-columns: 1fr !important; }
+  .form-grid { grid-template-columns: 1fr !important; }
+  .port-grid { grid-template-columns: 1fr 1fr !important; }
+  .port-grid figure { grid-column: auto !important; }
+  .stats-row { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important; }
+  .tl-row { grid-template-columns: 60px 36px 1fr !important; }
+}
+@media (max-width: 560px) { .port-grid { grid-template-columns: 1fr !important; } }
+</style>
 </head>
 <body>
 <div data-screen-label="Home" style="font-family:'Source Sans 3',system-ui,sans-serif;font-size:17px;line-height:1.6;background:#FBFAF7;color:#1C1B19">
@@ -76,15 +104,15 @@
   </section>
 
   <div style="background:#1C1B19;color:#F2EDE4">
-    <div style="max-width:1280px;margin:0 auto;padding:14px 28px;display:flex;flex-wrap:wrap;justify-content:center;column-gap:40px;row-gap:6px;font-size:13.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase">
+    <div class="trust-bar" style="max-width:1280px;margin:0 auto;padding:14px 28px;display:flex;flex-wrap:wrap;justify-content:center;column-gap:40px;row-gap:6px;font-size:13.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase">
       <span>Voted Best in Northern Michigan</span>
-      <span style="color:#8A8578">·</span>
+      <span class="sep" style="color:#8A8578">·</span>
       <span>26 years, family-run</span>
-      <span style="color:#8A8578">·</span>
+      <span class="sep" style="color:#8A8578">·</span>
       <span>20-person local crew</span>
-      <span style="color:#8A8578">·</span>
+      <span class="sep" style="color:#8A8578">·</span>
       <span>Three mow crews + in-house mechanic</span>
-      <span style="color:#8A8578">·</span>
+      <span class="sep" style="color:#8A8578">·</span>
       <span>Fully insured</span>
     </div>
   </div>
